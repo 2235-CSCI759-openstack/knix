@@ -19,7 +19,7 @@
 
   vars:
     coordinator_name: "{{ groups['riak'][0] }}"
-    coordinator_ip: "{{ hostvars[groups['riak'][0]].ansible_ssh_host }}"
+    coordinator_ip: "{{ hostvars[groups['riak'][0]].ansible_host }}"
 
     # location of mfn's riak deployment package on local machine
     mfn_riak_deployment_package_dir: "../../riak"

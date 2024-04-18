@@ -26,7 +26,7 @@
     service_name: mfn-datalayer
     service_script: "/lib/systemd/system/{{ service_name }}.service"
     datalayer_bind: "{{ ansible_ssh_host }}:4998"
-    riak_connect: "{{ hostvars[groups['riak'][0]].ansible_ssh_host }}:8087"
+    riak_connect: "{{ hostvars[groups['riak'][0]].ansible_host }}:8087"
     all_datalayer_hosts_bind: "{{ groups['all']|map('extract',hostvars)|map(attribute='ansible_ssh_host')|join(':4998,') }}:4998"
 
   tasks:
